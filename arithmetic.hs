@@ -13,3 +13,5 @@ main = do
     print $ succ 9
     putStrLn "min -2 1 ="
     print $ min (-2) 1  
+    putStrLn "max 5 9 ="
+    print $ max 5 9
