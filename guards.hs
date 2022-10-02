@@ -16,6 +16,17 @@ bmiTell' weight height
           normal = 25.0  
           fat = 30.0 
 
+describeList :: [a] -> String  
+describeList xs = "The list is " ++ case xs of [] -> "empty."  
+                                               [x] -> "a singleton list."   
+                                               xs -> "a longer list." 
+
+sayMe :: (Integral a) => a -> String  
+sayMe n = case n of
+                1 -> "One!"
+                2 -> "Two!"  
+                3 -> "Three!" 
+                otherwise -> "Not between 1 and 3"
 main = do
     putStrLn "fuction with guards"
     print $ bmiTell 70 1.7
@@ -30,3 +41,12 @@ main = do
     putStrLn "define names and functions with let"
     print $ [let square x = x * x in (square 5, square 3, square 2)]  
     print (let (a,b,c) = (1,2,3) in a+b+c)
+    putStrLn "case expressions"
+    print $ describeList []
+    print $ describeList [1]
+    print $ describeList [1, 2]
+    print $ sayMe 1
+    print $ sayMe 2
+    print $ sayMe 7
+
+
